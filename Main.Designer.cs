@@ -73,7 +73,7 @@
             // 
             this.MonitorTimer.Enabled = true;
             this.MonitorTimer.Interval = 250;
-            this.MonitorTimer.Tick += new System.EventHandler(this.MonitorTimer_Tick);
+            //this.MonitorTimer.Tick += new System.EventHandler(this.MonitorTimer_Tick);
             // 
             // pbMotor_1
             // 
@@ -324,7 +324,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Main";
             this.Text = "Main Page";
-            this.Load += new System.EventHandler(this.Main_Load);
+            //this.Load += new System.EventHandler(this.Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbMotor_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMotor_2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMotor_3)).EndInit();

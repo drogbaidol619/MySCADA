@@ -23,7 +23,7 @@ namespace MySCADA
         {
             InitializeComponent();
             Parent = parent;
-            this 
+            this.TopMost = true;
         }
 
         private void UpdateTimer_Tick_1(object sender, EventArgs e)
@@ -110,12 +110,9 @@ namespace MySCADA
             if (Parent == null) return;
             try
             {
-                lock (Program.PLC_1.Semaphore)
-                {
                     // Gửi cả hai lệnh
                     Parent.StartMotor("DBX0.0", true); // Gửi lệnh Start = true
                     Parent.StopMotor("DBX0.1", false); // Gửi lệnh Stop = false
-                }
 
             }
             catch (Exception ex)
@@ -130,12 +127,9 @@ namespace MySCADA
             if (Parent == null) return;
             try
             {
-                lock (Program.PLC_1.Semaphore)
-                {
                     // Gửi cả hai lệnh
                     Parent.StopMotor("DBX0.1", true);   // Gửi lệnh Stop = true
                     Parent.StartMotor("DBX0.0", false); // Gửi lệnh Start = false
-                }
             }
             catch (Exception ex)
             {
@@ -153,7 +147,6 @@ namespace MySCADA
                 bool ret = float.TryParse(lbSetSpeed.Text, out temp);
                 if (ret && temp >=0 && temp <=1000)
                 {
-                    lock (Program.PLC_1.Semaphore)
                         Parent.NewSpeed("DBD2",temp);
                 }
                 else
@@ -174,7 +167,6 @@ namespace MySCADA
         {
             float newSpeed = slider.Value;
             lbSetSpeed.Text = newSpeed.ToString();
-            lock (Program.PLC_1.Semaphore)
             {
                 Parent.NewSpeed("DBD2", newSpeed);
             }

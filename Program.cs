@@ -10,14 +10,14 @@ namespace MySCADA
     {
         public static SCADA Root = new SCADA();
 
-        public static PLC PLC_1;
-        public static List<Motor> Motors = new List<Motor>();
+        ////public static PLC PLC_1;
+        ////public static List<Motor> Motors = new List<Motor>();
         [STAThread]
         static void Main()
         {
-            PLC_1 = new PLC("PLC_1", "113.161.79.146"); //113.161.79.146  169.254.25.142
+            PLC plc = new PLC("PLC_1", "113.161.79.146"); //113.161.79.146  169.254.25.142
 
-            Root.AddPLC(PLC_1);
+            Root.AddPLC(plc);
 
             for (int i = 0; i < 10; i++)
             {

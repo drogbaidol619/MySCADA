@@ -19,46 +19,46 @@ namespace MySCADA
         }
 
         // MonitorTimer: đọc trạng thái từ Program.Motors và cập nhật màu pbMotor_i
-        private void MonitorTimer_Tick(object sender, EventArgs e)
-        {
-            UpdateMotorIndicatorFromModel(0, pbMotor_1);
-            UpdateMotorIndicatorFromModel(1, pbMotor_2);
-            UpdateMotorIndicatorFromModel(2, pbMotor_3);
-            UpdateMotorIndicatorFromModel(3, pbMotor_4);
-            UpdateMotorIndicatorFromModel(4, pbMotor_5);
-            UpdateMotorIndicatorFromModel(5, pbMotor_6);
-            UpdateMotorIndicatorFromModel(6, pbMotor_7);
-            UpdateMotorIndicatorFromModel(7, pbMotor_8);
-            UpdateMotorIndicatorFromModel(8, pbMotor_9);
-            UpdateMotorIndicatorFromModel(9, pbMotor_10);
-        }
+        //private void MonitorTimer_Tick(object sender, EventArgs e)
+        //{
+        //    UpdateMotorIndicatorFromModel(0, pbMotor_1);
+        //    UpdateMotorIndicatorFromModel(1, pbMotor_2);
+        //    UpdateMotorIndicatorFromModel(2, pbMotor_3);
+        //    UpdateMotorIndicatorFromModel(3, pbMotor_4);
+        //    UpdateMotorIndicatorFromModel(4, pbMotor_5);
+        //    UpdateMotorIndicatorFromModel(5, pbMotor_6);
+        //    UpdateMotorIndicatorFromModel(6, pbMotor_7);
+        //    UpdateMotorIndicatorFromModel(7, pbMotor_8);
+        //    UpdateMotorIndicatorFromModel(8, pbMotor_9);
+        //    UpdateMotorIndicatorFromModel(9, pbMotor_10);
+        //}
 
-        private void UpdateMotorIndicatorFromModel(int index, PictureBox pb)
-        {
-            if (pb == null) return;
+        //private void UpdateMotorIndicatorFromModel(int index, PictureBox pb)
+        //{
+        //    if (pb == null) return;
 
-            if (Program.Motors != null && index >= 0 && index < Program.Motors.Count)
-            {
-                try
-                {
-                    bool running = Program.Motors[index].Status;
-                    pb.BackColor = running ? Color.Green : Color.Gray;
-                }
-                catch
-                {
-                    pb.BackColor = Color.LightGray;
-                }
-            }
-            else
-            {
-                pb.BackColor = Color.LightGray;
-            }
-        }
+        //    if (Program.Motor != null && index >= 0 && index < Program.Motors.Count)
+        //    {
+        //        try
+        //        {
+        //            bool running = Program.Motors[index].Status;
+        //            pb.BackColor = running ? Color.Green : Color.Gray;
+        //        }
+        //        catch
+        //        {
+        //            pb.BackColor = Color.LightGray;
+        //        }
+        //    }
+        //    else
+        //    {
+        //        pb.BackColor = Color.LightGray;
+        //    }
+        //}
 
-        private void Main_Load(object sender, EventArgs e)
-        {
-            MonitorTimer_Tick(this, EventArgs.Empty);
-        }
+        //private void Main_Load(object sender, EventArgs e)
+        //{
+        //    MonitorTimer_Tick(this, EventArgs.Empty);
+        //}
         private void btMotor_1_Click(object sender, EventArgs e)
         {
             Motor motor = Program.Root.FindMotor("Motor_1");

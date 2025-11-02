@@ -35,7 +35,6 @@ namespace MySCADA
             UpdateTimer.Interval = Period;
             UpdateTimer.Elapsed += UpdateTimer_Elapsed;
             UpdateTimer.Enabled = true;
-            ////Parent = parent;
         }
 
         private void UpdateTimer_Elapsed(object sender, ElapsedEventArgs e)
