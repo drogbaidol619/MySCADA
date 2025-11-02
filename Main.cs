@@ -61,62 +61,102 @@ namespace MySCADA
         }
         private void btMotor_1_Click(object sender, EventArgs e)
         {
-            Motor_Faceplate fpl = new Motor_Faceplate(Program.Motors[0]);
-            fpl.Show();
+            Motor motor = Program.Root.FindMotor("Motor_1");
+            if (motor != null) 
+            { 
+                Motor_Faceplate fpl = new Motor_Faceplate(motor);
+                fpl.Show();
+            }
         }
 
         private void btMotor_2_Click(object sender, EventArgs e)
         {
-            Motor_Faceplate fpl = new Motor_Faceplate(Program.Motors[1]);
-            fpl.Show();
+            Motor motor = Program.Root.FindMotor("Motor_1");
+            if (motor != null)
+            {
+                Motor_Faceplate fpl = new Motor_Faceplate(motor);
+                fpl.Show();
+            }
         }
 
         private void btMotor_3_Click(object sender, EventArgs e)
         {
-            Motor_Faceplate fpl = new Motor_Faceplate(Program.Motors[2]);
-            fpl.Show();
+            Motor motor = Program.Root.FindMotor("Motor_1");
+            if (motor != null)
+            {
+                Motor_Faceplate fpl = new Motor_Faceplate(motor);
+                fpl.Show();
+            }
         }
 
         private void btMotor_4_Click(object sender, EventArgs e)
         {
-            Motor_Faceplate fpl = new Motor_Faceplate(Program.Motors[3]);
-            fpl.Show();
+            Motor motor = Program.Root.FindMotor("Motor_1");
+            if (motor != null)
+            {
+                Motor_Faceplate fpl = new Motor_Faceplate(motor);
+                fpl.Show();
+            }
         }
 
         private void btMotor_5_Click(object sender, EventArgs e)
         {
-            Motor_Faceplate fpl = new Motor_Faceplate(Program.Motors[4]);
-            fpl.Show();
+            Motor motor = Program.Root.FindMotor("Motor_1");
+            if (motor != null)
+            {
+                Motor_Faceplate fpl = new Motor_Faceplate(motor);
+                fpl.Show();
+            }
         }
 
         private void btMotor_6_Click(object sender, EventArgs e)
         {
-            Motor_Faceplate fpl = new Motor_Faceplate(Program.Motors[5]);
-            fpl.Show();
+            Motor motor = Program.Root.FindMotor("Motor_1");
+            if (motor != null)
+            {
+                Motor_Faceplate fpl = new Motor_Faceplate(motor);
+                fpl.Show();
+            }
         }
 
         private void btMotor_7_Click(object sender, EventArgs e)
         {
-            Motor_Faceplate fpl = new Motor_Faceplate(Program.Motors[6]);
-            fpl.Show();
+            Motor motor = Program.Root.FindMotor("Motor_1");
+            if (motor != null)
+            {
+                Motor_Faceplate fpl = new Motor_Faceplate(motor);
+                fpl.Show();
+            }
         }
 
         private void btMotor_8_Click(object sender, EventArgs e)
         {
-            Motor_Faceplate fpl = new Motor_Faceplate(Program.Motors[7]);
-            fpl.Show();
+            Motor motor = Program.Root.FindMotor("Motor_1");
+            if (motor != null)
+            {
+                Motor_Faceplate fpl = new Motor_Faceplate(motor);
+                fpl.Show();
+            }
         }
 
         private void btMotor_9_Click(object sender, EventArgs e)
         {
-            Motor_Faceplate fpl = new Motor_Faceplate(Program.Motors[8]);
-            fpl.Show();
+            Motor motor = Program.Root.FindMotor("Motor_1");
+            if (motor != null)
+            {
+                Motor_Faceplate fpl = new Motor_Faceplate(motor);
+                fpl.Show();
+            }
         }
 
         private void btMotor_10_Click(object sender, EventArgs e)
         {
-            Motor_Faceplate fpl = new Motor_Faceplate(Program.Motors[9]);
-            fpl.Show();
+            Motor motor = Program.Root.FindMotor("Motor_1");
+            if (motor != null)
+            {
+                Motor_Faceplate fpl = new Motor_Faceplate(motor);
+                fpl.Show();
+            }
         }
     }
 }

@@ -12,9 +12,6 @@ namespace MySCADA
 
         public static PLC PLC_1;
         public static List<Motor> Motors = new List<Motor>();
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
@@ -22,19 +19,12 @@ namespace MySCADA
 
             Root.AddPLC(PLC_1);
 
-            Motor motor = new Motor("Motor_1","PLC_1", 0, 500, Root);
-            Root.AddMotor(motor);
-            motor = new Motor("Motor_2", "PLC_1", 1, 500, Root);
-            Root.AddMotor(motor);
-            motor = new Motor("Motor_3", "PLC_1", 2, 500, Root);
-            Root.AddMotor(motor);
+            for (int i = 0; i < 10; i++)
+            {
+                Motor motor = new Motor($"Motor_{i + 1}","PLC_1",i, 500);
+                Root.AddMotor(motor);
+            }
 
-
-            //for (int i=0; i<10; i++)
-            //{
-            //    Motor motor = new Motor($"Motor_{i+1}", i, 500);
-            //    Motors.Add(motor);
-            //}
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Main());

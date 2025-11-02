@@ -23,6 +23,7 @@ namespace MySCADA
         {
             InitializeComponent();
             Parent = parent;
+            this 
         }
 
         private void UpdateTimer_Tick_1(object sender, EventArgs e)
