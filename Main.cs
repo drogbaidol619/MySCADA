@@ -71,7 +71,7 @@ namespace MySCADA
 
         private void btMotor_2_Click(object sender, EventArgs e)
         {
-            Motor motor = Program.Root.FindMotor("Motor_1");
+            Motor motor = Program.Root.FindMotor("Motor_2");
             if (motor != null)
             {
                 Motor_Faceplate fpl = new Motor_Faceplate(motor);
@@ -81,7 +81,7 @@ namespace MySCADA
 
         private void btMotor_3_Click(object sender, EventArgs e)
         {
-            Motor motor = Program.Root.FindMotor("Motor_1");
+            Motor motor = Program.Root.FindMotor("Motor_3");
             if (motor != null)
             {
                 Motor_Faceplate fpl = new Motor_Faceplate(motor);
@@ -91,7 +91,7 @@ namespace MySCADA
 
         private void btMotor_4_Click(object sender, EventArgs e)
         {
-            Motor motor = Program.Root.FindMotor("Motor_1");
+            Motor motor = Program.Root.FindMotor("Motor_4");
             if (motor != null)
             {
                 Motor_Faceplate fpl = new Motor_Faceplate(motor);
@@ -101,7 +101,7 @@ namespace MySCADA
 
         private void btMotor_5_Click(object sender, EventArgs e)
         {
-            Motor motor = Program.Root.FindMotor("Motor_1");
+            Motor motor = Program.Root.FindMotor("Motor_5");
             if (motor != null)
             {
                 Motor_Faceplate fpl = new Motor_Faceplate(motor);
@@ -111,7 +111,7 @@ namespace MySCADA
 
         private void btMotor_6_Click(object sender, EventArgs e)
         {
-            Motor motor = Program.Root.FindMotor("Motor_1");
+            Motor motor = Program.Root.FindMotor("Motor_6");
             if (motor != null)
             {
                 Motor_Faceplate fpl = new Motor_Faceplate(motor);
@@ -121,7 +121,7 @@ namespace MySCADA
 
         private void btMotor_7_Click(object sender, EventArgs e)
         {
-            Motor motor = Program.Root.FindMotor("Motor_1");
+            Motor motor = Program.Root.FindMotor("Motor_7");
             if (motor != null)
             {
                 Motor_Faceplate fpl = new Motor_Faceplate(motor);
@@ -131,7 +131,7 @@ namespace MySCADA
 
         private void btMotor_8_Click(object sender, EventArgs e)
         {
-            Motor motor = Program.Root.FindMotor("Motor_1");
+            Motor motor = Program.Root.FindMotor("Motor_8");
             if (motor != null)
             {
                 Motor_Faceplate fpl = new Motor_Faceplate(motor);
@@ -141,7 +141,7 @@ namespace MySCADA
 
         private void btMotor_9_Click(object sender, EventArgs e)
         {
-            Motor motor = Program.Root.FindMotor("Motor_1");
+            Motor motor = Program.Root.FindMotor("Motor_9");
             if (motor != null)
             {
                 Motor_Faceplate fpl = new Motor_Faceplate(motor);
@@ -151,7 +151,7 @@ namespace MySCADA
 
         private void btMotor_10_Click(object sender, EventArgs e)
         {
-            Motor motor = Program.Root.FindMotor("Motor_1");
+            Motor motor = Program.Root.FindMotor("Motor_10");
             if (motor != null)
             {
                 Motor_Faceplate fpl = new Motor_Faceplate(motor);

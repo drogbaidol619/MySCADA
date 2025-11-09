@@ -53,12 +53,12 @@ namespace MySCADA
 
         public void StartMotor(string addr, object value)
         {
-            string startAddress = $"DB{Address+1}." + addr; //DB1.DBX0.0 
-            PLC plc = Program.Root.FindPLC(PlcName);
-            if (plc != null)
-            {
-                plc.thePLC.Write(startAddress, value);
-            }
+                string startAddress = $"DB{Address + 1}." + addr; //DB1.DBX0.0 
+                PLC plc = Program.Root.FindPLC(PlcName);
+                if (plc != null)
+                {
+                    plc.thePLC.Write(startAddress, value);
+                }
         }
 
         public void StopMotor(string addr, object value)

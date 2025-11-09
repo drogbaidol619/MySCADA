@@ -15,7 +15,7 @@ namespace MySCADA
         [STAThread]
         static void Main()
         {
-            PLC plc = new PLC("PLC_1", "113.161.79.146"); //113.161.79.146  169.254.25.142
+            PLC plc = new PLC("PLC_1", "169.254.25.142"); //113.161.79.146  169.254.25.142
 
             Root.AddPLC(plc);
 
