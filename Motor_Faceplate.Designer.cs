@@ -30,20 +30,25 @@
         {
             this.components = new System.ComponentModel.Container();
             this.UpdateTimer = new System.Windows.Forms.Timer(this.components);
-            this.lbSetSpeed = new System.Windows.Forms.TextBox();
-            this.lbTemperature = new System.Windows.Forms.Label();
-            this.vbarSpeed = new System.Windows.Forms.PictureBox();
-            this.pbTem1 = new System.Windows.Forms.PictureBox();
-            this.label = new System.Windows.Forms.Label();
-            this.lbSpeed = new System.Windows.Forms.Label();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.controlPage = new System.Windows.Forms.TabPage();
+            this.trendPage = new System.Windows.Forms.TabPage();
+            this.slider = new System.Windows.Forms.TrackBar();
+            this.pbfan = new System.Windows.Forms.PictureBox();
             this.btStop = new System.Windows.Forms.Button();
             this.btStart = new System.Windows.Forms.Button();
-            this.pbfan = new System.Windows.Forms.PictureBox();
-            this.slider = new System.Windows.Forms.TrackBar();
+            this.lbSpeed = new System.Windows.Forms.Label();
+            this.label = new System.Windows.Forms.Label();
+            this.vbarSpeed = new System.Windows.Forms.PictureBox();
+            this.pbTem1 = new System.Windows.Forms.PictureBox();
+            this.lbSetSpeed = new System.Windows.Forms.TextBox();
+            this.lbTemperature = new System.Windows.Forms.Label();
+            this.tabControl1.SuspendLayout();
+            this.controlPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.slider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbfan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vbarSpeed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbTem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbfan)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.slider)).BeginInit();
             this.SuspendLayout();
             // 
             // UpdateTimer
@@ -51,144 +56,174 @@
             this.UpdateTimer.Enabled = true;
             this.UpdateTimer.Tick += new System.EventHandler(this.UpdateTimer_Tick_1);
             // 
-            // lbSetSpeed
+            // tabControl1
             // 
-            this.lbSetSpeed.Location = new System.Drawing.Point(154, 178);
-            this.lbSetSpeed.Name = "lbSetSpeed";
-            this.lbSetSpeed.Size = new System.Drawing.Size(161, 22);
-            this.lbSetSpeed.TabIndex = 10;
-            this.lbSetSpeed.DoubleClick += new System.EventHandler(this.lbSetSpeed_DoubleClick);
-            this.lbSetSpeed.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lbSetSpeed_KeyDown);
+            this.tabControl1.Controls.Add(this.controlPage);
+            this.tabControl1.Controls.Add(this.trendPage);
+            this.tabControl1.Location = new System.Drawing.Point(12, 22);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(533, 391);
+            this.tabControl1.TabIndex = 21;
             // 
-            // lbTemperature
+            // controlPage
             // 
-            this.lbTemperature.AutoSize = true;
-            this.lbTemperature.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTemperature.Location = new System.Drawing.Point(20, 175);
-            this.lbTemperature.Name = "lbTemperature";
-            this.lbTemperature.Size = new System.Drawing.Size(105, 25);
-            this.lbTemperature.TabIndex = 9;
-            this.lbTemperature.Text = "Set Speed";
+            this.controlPage.Controls.Add(this.slider);
+            this.controlPage.Controls.Add(this.pbfan);
+            this.controlPage.Controls.Add(this.btStop);
+            this.controlPage.Controls.Add(this.btStart);
+            this.controlPage.Controls.Add(this.lbSpeed);
+            this.controlPage.Controls.Add(this.label);
+            this.controlPage.Controls.Add(this.vbarSpeed);
+            this.controlPage.Controls.Add(this.pbTem1);
+            this.controlPage.Controls.Add(this.lbSetSpeed);
+            this.controlPage.Controls.Add(this.lbTemperature);
+            this.controlPage.Location = new System.Drawing.Point(4, 25);
+            this.controlPage.Name = "controlPage";
+            this.controlPage.Padding = new System.Windows.Forms.Padding(3);
+            this.controlPage.Size = new System.Drawing.Size(525, 362);
+            this.controlPage.TabIndex = 0;
+            this.controlPage.Text = "Control Tab";
+            this.controlPage.UseVisualStyleBackColor = true;
+            this.controlPage.Click += new System.EventHandler(this.tabPage1_Click);
             // 
-            // vbarSpeed
+            // trendPage
             // 
-            this.vbarSpeed.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.vbarSpeed.Location = new System.Drawing.Point(356, 12);
-            this.vbarSpeed.Name = "vbarSpeed";
-            this.vbarSpeed.Size = new System.Drawing.Size(39, 269);
-            this.vbarSpeed.TabIndex = 14;
-            this.vbarSpeed.TabStop = false;
+            this.trendPage.Location = new System.Drawing.Point(4, 25);
+            this.trendPage.Name = "trendPage";
+            this.trendPage.Padding = new System.Windows.Forms.Padding(3);
+            this.trendPage.Size = new System.Drawing.Size(525, 362);
+            this.trendPage.TabIndex = 1;
+            this.trendPage.Text = "TrendPage";
+            this.trendPage.UseVisualStyleBackColor = true;
             // 
-            // pbTem1
+            // slider
             // 
-            this.pbTem1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.pbTem1.Location = new System.Drawing.Point(356, 13);
-            this.pbTem1.Name = "pbTem1";
-            this.pbTem1.Size = new System.Drawing.Size(39, 270);
-            this.pbTem1.TabIndex = 13;
-            this.pbTem1.TabStop = false;
+            this.slider.Location = new System.Drawing.Point(438, 23);
+            this.slider.Maximum = 1000;
+            this.slider.Name = "slider";
+            this.slider.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.slider.Size = new System.Drawing.Size(56, 268);
+            this.slider.TabIndex = 30;
             // 
-            // label
+            // pbfan
             // 
-            this.label.AutoSize = true;
-            this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label.Location = new System.Drawing.Point(149, 223);
-            this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(53, 25);
-            this.label.TabIndex = 15;
-            this.label.Text = "Num";
+            this.pbfan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbfan.Location = new System.Drawing.Point(179, 23);
+            this.pbfan.Name = "pbfan";
+            this.pbfan.Size = new System.Drawing.Size(137, 130);
+            this.pbfan.TabIndex = 29;
+            this.pbfan.TabStop = false;
+            // 
+            // btStop
+            // 
+            this.btStop.Location = new System.Drawing.Point(26, 98);
+            this.btStop.Margin = new System.Windows.Forms.Padding(4);
+            this.btStop.Name = "btStop";
+            this.btStop.Size = new System.Drawing.Size(124, 55);
+            this.btStop.TabIndex = 28;
+            this.btStop.Text = "STOP";
+            this.btStop.UseVisualStyleBackColor = true;
+            // 
+            // btStart
+            // 
+            this.btStart.Location = new System.Drawing.Point(26, 23);
+            this.btStart.Margin = new System.Windows.Forms.Padding(4);
+            this.btStart.Name = "btStart";
+            this.btStart.Size = new System.Drawing.Size(124, 55);
+            this.btStart.TabIndex = 27;
+            this.btStart.Text = "START";
+            this.btStart.UseVisualStyleBackColor = true;
             // 
             // lbSpeed
             // 
             this.lbSpeed.AutoSize = true;
             this.lbSpeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSpeed.Location = new System.Drawing.Point(20, 223);
+            this.lbSpeed.Location = new System.Drawing.Point(21, 233);
             this.lbSpeed.Name = "lbSpeed";
             this.lbSpeed.Size = new System.Drawing.Size(70, 25);
-            this.lbSpeed.TabIndex = 16;
+            this.lbSpeed.TabIndex = 26;
             this.lbSpeed.Text = "Speed";
             // 
-            // btStop
+            // label
             // 
-            this.btStop.Location = new System.Drawing.Point(25, 88);
-            this.btStop.Margin = new System.Windows.Forms.Padding(4);
-            this.btStop.Name = "btStop";
-            this.btStop.Size = new System.Drawing.Size(124, 55);
-            this.btStop.TabIndex = 18;
-            this.btStop.Text = "STOP";
-            this.btStop.UseVisualStyleBackColor = true;
-            this.btStop.Click += new System.EventHandler(this.btStop_Click);
+            this.label.AutoSize = true;
+            this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label.Location = new System.Drawing.Point(150, 233);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(53, 25);
+            this.label.TabIndex = 25;
+            this.label.Text = "Num";
             // 
-            // btStart
+            // vbarSpeed
             // 
-            this.btStart.Location = new System.Drawing.Point(25, 13);
-            this.btStart.Margin = new System.Windows.Forms.Padding(4);
-            this.btStart.Name = "btStart";
-            this.btStart.Size = new System.Drawing.Size(124, 55);
-            this.btStart.TabIndex = 17;
-            this.btStart.Text = "START";
-            this.btStart.UseVisualStyleBackColor = true;
-            this.btStart.Click += new System.EventHandler(this.btStart_Click);
+            this.vbarSpeed.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.vbarSpeed.Location = new System.Drawing.Point(357, 22);
+            this.vbarSpeed.Name = "vbarSpeed";
+            this.vbarSpeed.Size = new System.Drawing.Size(39, 269);
+            this.vbarSpeed.TabIndex = 24;
+            this.vbarSpeed.TabStop = false;
             // 
-            // pbfan
+            // pbTem1
             // 
-            this.pbfan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbfan.Location = new System.Drawing.Point(178, 13);
-            this.pbfan.Name = "pbfan";
-            this.pbfan.Size = new System.Drawing.Size(137, 130);
-            this.pbfan.TabIndex = 19;
-            this.pbfan.TabStop = false;
+            this.pbTem1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.pbTem1.Location = new System.Drawing.Point(357, 23);
+            this.pbTem1.Name = "pbTem1";
+            this.pbTem1.Size = new System.Drawing.Size(39, 270);
+            this.pbTem1.TabIndex = 23;
+            this.pbTem1.TabStop = false;
             // 
-            // slider
+            // lbSetSpeed
             // 
-            this.slider.Location = new System.Drawing.Point(437, 13);
-            this.slider.Maximum = 1000;
-            this.slider.Name = "slider";
-            this.slider.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.slider.Size = new System.Drawing.Size(56, 268);
-            this.slider.TabIndex = 20;
-            this.slider.Scroll += new System.EventHandler(this.slider_Scroll);
-            this.slider.MouseDown += new System.Windows.Forms.MouseEventHandler(this.slider_MouseDown);
-            this.slider.MouseLeave += new System.EventHandler(this.slider_MouseLeave);
+            this.lbSetSpeed.Location = new System.Drawing.Point(155, 188);
+            this.lbSetSpeed.Name = "lbSetSpeed";
+            this.lbSetSpeed.Size = new System.Drawing.Size(161, 22);
+            this.lbSetSpeed.TabIndex = 22;
+            // 
+            // lbTemperature
+            // 
+            this.lbTemperature.AutoSize = true;
+            this.lbTemperature.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTemperature.Location = new System.Drawing.Point(21, 185);
+            this.lbTemperature.Name = "lbTemperature";
+            this.lbTemperature.Size = new System.Drawing.Size(105, 25);
+            this.lbTemperature.TabIndex = 21;
+            this.lbTemperature.Text = "Set Speed";
             // 
             // Motor_Faceplate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(541, 320);
-            this.Controls.Add(this.slider);
-            this.Controls.Add(this.pbfan);
-            this.Controls.Add(this.btStop);
-            this.Controls.Add(this.btStart);
-            this.Controls.Add(this.lbSpeed);
-            this.Controls.Add(this.label);
-            this.Controls.Add(this.vbarSpeed);
-            this.Controls.Add(this.pbTem1);
-            this.Controls.Add(this.lbSetSpeed);
-            this.Controls.Add(this.lbTemperature);
+            this.ClientSize = new System.Drawing.Size(570, 434);
+            this.Controls.Add(this.tabControl1);
             this.Name = "Motor_Faceplate";
             this.Text = "Motor_Faceplate";
             this.Load += new System.EventHandler(this.Motor_Faceplate_Load);
+            this.tabControl1.ResumeLayout(false);
+            this.controlPage.ResumeLayout(false);
+            this.controlPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.slider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbfan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vbarSpeed)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbTem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbfan)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.slider)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
         private System.Windows.Forms.Timer UpdateTimer;
-        private System.Windows.Forms.TextBox lbSetSpeed;
-        private System.Windows.Forms.Label lbTemperature;
-        private System.Windows.Forms.PictureBox vbarSpeed;
-        private System.Windows.Forms.PictureBox pbTem1;
-        private System.Windows.Forms.Label label;
-        private System.Windows.Forms.Label lbSpeed;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage controlPage;
+        private System.Windows.Forms.TabPage trendPage;
+        private System.Windows.Forms.TrackBar slider;
+        private System.Windows.Forms.PictureBox pbfan;
         private System.Windows.Forms.Button btStop;
         private System.Windows.Forms.Button btStart;
-        private System.Windows.Forms.PictureBox pbfan;
-        private System.Windows.Forms.TrackBar slider;
+        private System.Windows.Forms.Label lbSpeed;
+        private System.Windows.Forms.Label label;
+        private System.Windows.Forms.PictureBox vbarSpeed;
+        private System.Windows.Forms.PictureBox pbTem1;
+        private System.Windows.Forms.TextBox lbSetSpeed;
+        private System.Windows.Forms.Label lbTemperature;
     }
 }

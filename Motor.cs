@@ -57,7 +57,8 @@ namespace MySCADA
                 PLC plc = Program.Root.FindPLC(PlcName);
                 if (plc != null)
                 {
-                    plc.thePLC.Write(startAddress, value);
+                    lock (plc.Semaphore)
+                    { plc.thePLC.Write(startAddress, value); }
                 }
         }
 
@@ -67,7 +68,8 @@ namespace MySCADA
             PLC plc = Program.Root.FindPLC(PlcName);
             if (plc != null)
             {
-                plc.thePLC.Write(startAddress, value);
+                lock (plc.Semaphore)
+                { plc.thePLC.Write(startAddress, value); }
             }
         }
 
@@ -77,7 +79,8 @@ namespace MySCADA
             PLC plc = Program.Root.FindPLC(PlcName);
             if (plc != null)
             {
-                plc.thePLC.Write(startAddress, value);
+                lock (plc.Semaphore)
+                { plc.thePLC.Write(startAddress, value); }
             }
         }
 

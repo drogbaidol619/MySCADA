@@ -18,47 +18,6 @@ namespace MySCADA
             InitializeComponent();
         }
 
-        // MonitorTimer: đọc trạng thái từ Program.Motors và cập nhật màu pbMotor_i
-        //private void MonitorTimer_Tick(object sender, EventArgs e)
-        //{
-        //    UpdateMotorIndicatorFromModel(0, pbMotor_1);
-        //    UpdateMotorIndicatorFromModel(1, pbMotor_2);
-        //    UpdateMotorIndicatorFromModel(2, pbMotor_3);
-        //    UpdateMotorIndicatorFromModel(3, pbMotor_4);
-        //    UpdateMotorIndicatorFromModel(4, pbMotor_5);
-        //    UpdateMotorIndicatorFromModel(5, pbMotor_6);
-        //    UpdateMotorIndicatorFromModel(6, pbMotor_7);
-        //    UpdateMotorIndicatorFromModel(7, pbMotor_8);
-        //    UpdateMotorIndicatorFromModel(8, pbMotor_9);
-        //    UpdateMotorIndicatorFromModel(9, pbMotor_10);
-        //}
-
-        //private void UpdateMotorIndicatorFromModel(int index, PictureBox pb)
-        //{
-        //    if (pb == null) return;
-
-        //    if (Program.Motor != null && index >= 0 && index < Program.Motors.Count)
-        //    {
-        //        try
-        //        {
-        //            bool running = Program.Motors[index].Status;
-        //            pb.BackColor = running ? Color.Green : Color.Gray;
-        //        }
-        //        catch
-        //        {
-        //            pb.BackColor = Color.LightGray;
-        //        }
-        //    }
-        //    else
-        //    {
-        //        pb.BackColor = Color.LightGray;
-        //    }
-        //}
-
-        //private void Main_Load(object sender, EventArgs e)
-        //{
-        //    MonitorTimer_Tick(this, EventArgs.Empty);
-        //}
         private void btMotor_1_Click(object sender, EventArgs e)
         {
             Motor motor = Program.Root.FindMotor("Motor_1");
@@ -158,5 +117,56 @@ namespace MySCADA
                 fpl.Show();
             }
         }
+
+        private void MonitorTimer_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                // Gọi hàm trợ giúp cho từng motor
+                UpdateMotorColor(pbMotor_1, "Motor_1");
+                UpdateMotorColor(pbMotor_2, "Motor_2");
+                UpdateMotorColor(pbMotor_3, "Motor_3");
+                UpdateMotorColor(pbMotor_4, "Motor_4");
+                UpdateMotorColor(pbMotor_5, "Motor_5");
+                UpdateMotorColor(pbMotor_6, "Motor_6");
+                UpdateMotorColor(pbMotor_7, "Motor_7");
+                UpdateMotorColor(pbMotor_8, "Motor_8");
+                UpdateMotorColor(pbMotor_9, "Motor_9");
+                UpdateMotorColor(pbMotor_10, "Motor_10");
+            }
+            catch (Exception ex)
+            {
+                MonitorTimer.Stop();
+                MessageBox.Show("Lỗi nghiêm trọng khi cập nhật UI: " + ex.Message);
+            }
+        }
+
+
+        private void UpdateMotorColor(Control control, string motorName)
+        {
+            Motor motor = Program.Root.FindMotor(motorName);
+
+            if (motor != null)
+            {
+                if (motor.Status)
+                {
+                    control.BackColor = Color.Green; 
+                }
+                else
+                {
+                    control.BackColor = Color.Gray; 
+                }
+            }
+            else
+            {
+                control.BackColor = Color.Red;
+            }
+        }
+
+
+
+
+
+
     }
 }

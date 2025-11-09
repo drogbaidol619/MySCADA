@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.SimulationTimer = new System.Windows.Forms.Timer(this.components);
             this.MonitorTimer = new System.Windows.Forms.Timer(this.components);
             this.pbMotor_1 = new System.Windows.Forms.PictureBox();
             this.btMotor_1 = new System.Windows.Forms.Button();
@@ -64,16 +63,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbMotor_10)).BeginInit();
             this.SuspendLayout();
             // 
-            // SimulationTimer
-            // 
-            this.SimulationTimer.Enabled = true;
-            ////this.SimulationTimer.Tick += new System.EventHandler(this.SimulationTimer_Tick);
-            // 
             // MonitorTimer
             // 
             this.MonitorTimer.Enabled = true;
             this.MonitorTimer.Interval = 250;
-            //this.MonitorTimer.Tick += new System.EventHandler(this.MonitorTimer_Tick);
+            this.MonitorTimer.Tick += new System.EventHandler(this.MonitorTimer_Tick);
             // 
             // pbMotor_1
             // 
@@ -324,7 +318,6 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Main";
             this.Text = "Main Page";
-            //this.Load += new System.EventHandler(this.Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbMotor_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMotor_2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMotor_3)).EndInit();
@@ -341,7 +334,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Timer SimulationTimer;
         private System.Windows.Forms.Timer MonitorTimer;
         private System.Windows.Forms.PictureBox pbMotor_1;
         private System.Windows.Forms.Button btMotor_1;
