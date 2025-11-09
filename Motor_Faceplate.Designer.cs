@@ -32,7 +32,6 @@
             this.UpdateTimer = new System.Windows.Forms.Timer(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.controlPage = new System.Windows.Forms.TabPage();
-            this.trendPage = new System.Windows.Forms.TabPage();
             this.slider = new System.Windows.Forms.TrackBar();
             this.pbfan = new System.Windows.Forms.PictureBox();
             this.btStop = new System.Windows.Forms.Button();
@@ -43,12 +42,16 @@
             this.pbTem1 = new System.Windows.Forms.PictureBox();
             this.lbSetSpeed = new System.Windows.Forms.TextBox();
             this.lbTemperature = new System.Windows.Forms.Label();
+            this.trendPage = new System.Windows.Forms.TabPage();
+            this.speedTrend = new System.Windows.Forms.Integration.ElementHost();
+            this.cartesianChart1 = new LiveCharts.Wpf.CartesianChart();
             this.tabControl1.SuspendLayout();
             this.controlPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.slider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbfan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vbarSpeed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbTem1)).BeginInit();
+            this.trendPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // UpdateTimer
@@ -85,17 +88,6 @@
             this.controlPage.TabIndex = 0;
             this.controlPage.Text = "Control Tab";
             this.controlPage.UseVisualStyleBackColor = true;
-            this.controlPage.Click += new System.EventHandler(this.tabPage1_Click);
-            // 
-            // trendPage
-            // 
-            this.trendPage.Location = new System.Drawing.Point(4, 25);
-            this.trendPage.Name = "trendPage";
-            this.trendPage.Padding = new System.Windows.Forms.Padding(3);
-            this.trendPage.Size = new System.Drawing.Size(525, 362);
-            this.trendPage.TabIndex = 1;
-            this.trendPage.Text = "TrendPage";
-            this.trendPage.UseVisualStyleBackColor = true;
             // 
             // slider
             // 
@@ -105,6 +97,9 @@
             this.slider.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.slider.Size = new System.Drawing.Size(56, 268);
             this.slider.TabIndex = 30;
+            this.slider.Scroll += new System.EventHandler(this.slider_Scroll);
+            this.slider.MouseDown += new System.Windows.Forms.MouseEventHandler(this.slider_MouseDown);
+            this.slider.MouseLeave += new System.EventHandler(this.slider_MouseLeave);
             // 
             // pbfan
             // 
@@ -124,6 +119,7 @@
             this.btStop.TabIndex = 28;
             this.btStop.Text = "STOP";
             this.btStop.UseVisualStyleBackColor = true;
+            this.btStop.Click += new System.EventHandler(this.btStop_Click);
             // 
             // btStart
             // 
@@ -134,6 +130,7 @@
             this.btStart.TabIndex = 27;
             this.btStart.Text = "START";
             this.btStart.UseVisualStyleBackColor = true;
+            this.btStart.Click += new System.EventHandler(this.btStart_Click);
             // 
             // lbSpeed
             // 
@@ -179,6 +176,8 @@
             this.lbSetSpeed.Name = "lbSetSpeed";
             this.lbSetSpeed.Size = new System.Drawing.Size(161, 22);
             this.lbSetSpeed.TabIndex = 22;
+            this.lbSetSpeed.DoubleClick += new System.EventHandler(this.lbSetSpeed_DoubleClick);
+            this.lbSetSpeed.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lbSetSpeed_KeyDown);
             // 
             // lbTemperature
             // 
@@ -190,6 +189,27 @@
             this.lbTemperature.TabIndex = 21;
             this.lbTemperature.Text = "Set Speed";
             // 
+            // trendPage
+            // 
+            this.trendPage.Controls.Add(this.speedTrend);
+            this.trendPage.Location = new System.Drawing.Point(4, 25);
+            this.trendPage.Name = "trendPage";
+            this.trendPage.Padding = new System.Windows.Forms.Padding(3);
+            this.trendPage.Size = new System.Drawing.Size(525, 362);
+            this.trendPage.TabIndex = 1;
+            this.trendPage.Text = "TrendPage";
+            this.trendPage.UseVisualStyleBackColor = true;
+            // 
+            // speedTrend
+            // 
+            this.speedTrend.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.speedTrend.Location = new System.Drawing.Point(3, 3);
+            this.speedTrend.Name = "speedTrend";
+            this.speedTrend.Size = new System.Drawing.Size(519, 356);
+            this.speedTrend.TabIndex = 0;
+            this.speedTrend.Text = "speedTrend";
+            this.speedTrend.Child = this.cartesianChart1;
+            // 
             // Motor_Faceplate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -199,6 +219,7 @@
             this.Name = "Motor_Faceplate";
             this.Text = "Motor_Faceplate";
             this.Load += new System.EventHandler(this.Motor_Faceplate_Load);
+            this.Shown += new System.EventHandler(this.Motor_Faceplate_Shown);
             this.tabControl1.ResumeLayout(false);
             this.controlPage.ResumeLayout(false);
             this.controlPage.PerformLayout();
@@ -206,6 +227,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbfan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vbarSpeed)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbTem1)).EndInit();
+            this.trendPage.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -225,5 +247,7 @@
         private System.Windows.Forms.PictureBox pbTem1;
         private System.Windows.Forms.TextBox lbSetSpeed;
         private System.Windows.Forms.Label lbTemperature;
+        private System.Windows.Forms.Integration.ElementHost speedTrend;
+        private LiveCharts.Wpf.CartesianChart cartesianChart1;
     }
 }
