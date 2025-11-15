@@ -9,21 +9,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-// 1. THÊM CÁC THƯ VIỆN CỦA LIVECHARTS
-using LiveCharts;
-using LiveCharts.Wpf; // Cần thêm tham chiếu (reference) 'WindowsBase'
-using LiveCharts.Configurations;
+// 1. THÊM THƯ VIỆN CHART (BẮT BUỘC)
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace MySCADA
 {
-    // 1. TẠO MODEL DỮ LIỆU MỚI
-    // (Class này chứa cả Thời gian và Tốc độ)
-    public class TimeSpeedModel
-    {
-        public DateTime Time { get; set; }
-        public double Speed { get; set; }
-    }
-
     public partial class Motor_Faceplate : Form
     {
         Motor Parent;
@@ -32,23 +22,12 @@ namespace MySCADA
         List<Image> fanImages = new List<Image>();
         int fan = 0;
 
-        // 2. THÊM GIỚI HẠN ĐIỂM (ĐỂ TRÁNH CRASH)
-        // (Hiển thị 100 điểm, tương đương 10 giây nếu Timer 100ms)
-        private const int MaxTrendPoints = 100;
-
-        // --- BIẾN CHO LIVECHARTS ---
-        // 3. SỬA KIỂU DỮ LIỆU CỦA DANH SÁCH
-        public ChartValues<TimeSpeedModel> SpeedValues { get; set; }
-        private CartesianChart myChart;
 
         public Motor_Faceplate(Motor parent)
         {
             InitializeComponent();
             Parent = parent;
             this.TopMost = true;
-
-            // 4. SỬA KHỞI TẠO DANH SÁCH
-            SpeedValues = new ChartValues<TimeSpeedModel>();
         }
 
         // -----------------------------------------------------------------
@@ -58,8 +37,7 @@ namespace MySCADA
         {
             if (Parent == null) return;
 
-            // --- 1. CẬP NHẬT TAB 1 (Điều khiển) ---
-            // (Code này giữ nguyên, không thay đổi)
+            // --- 1. CẬP NHẬT TAB 1 ---
             if (isEdited == false) { lbSetSpeed.Text = Parent.SetSpeed.ToString(); }
             if (isSliderEdited == false) { slider.Value = (int)Parent.SetSpeed; }
             label.Text = Parent.Speed.ToString();
@@ -85,32 +63,31 @@ namespace MySCADA
             }
             if (fanImages.Count > 0) { pbfan.BackgroundImageLayout = ImageLayout.Stretch; }
 
-
-            // --- 2. CẬP NHẬT TAB 2 (Biểu đồ) ---
-
-            // 5. THÊM DỮ LIỆU MỚI (CẢ THỜI GIAN VÀ TỐC ĐỘ)
-            SpeedValues.Add(new TimeSpeedModel
+            // --- 2. CẬP NHẬT TAB 2  ---
+            try
             {
-                Time = DateTime.Now,
-                Speed = Parent.Speed
-            });
+                DateTime currentTime = DateTime.Now;
+                double currentTimeValue = currentTime.ToOADate();
 
-            // 6. THÊM LẠI VÒNG LẶP XÓA ĐIỂM CŨ (RẤT QUAN TRỌNG)
-            while (SpeedValues.Count > MaxTrendPoints)
-            {
-                SpeedValues.RemoveAt(0);
+                // thêm điểm mới
+                chartSpeed.Series["TrendLine"].Points.AddXY(currentTimeValue, Parent.Speed);
+
+                // Cập nhật trục X để tự động mở rộng (sẽ bị "nén" lại)
+                if (chartSpeed.Series["TrendLine"].Points.Count > 1)
+                {
+                    chartSpeed.ChartAreas[0].AxisX.Maximum = currentTimeValue;
+                }
             }
+            catch (Exception ex) { /* Bỏ qua lỗi nhỏ nếu có */ }
         }
 
-        // -----------------------------------------------------------------
-        // HÀM LOAD (Chỉ khởi tạo Tab 1)
-        // -----------------------------------------------------------------
+
         private void Motor_Faceplate_Load(object sender, EventArgs e)
         {
-            // (Code này giữ nguyên, không thay đổi)
             this.Text = Parent.Name;
-            lbSetSpeed.Text = Parent.SetSpeed.ToString();
 
+            // --- KHỞI TẠO TAB 1---
+            lbSetSpeed.Text = Parent.SetSpeed.ToString();
             try
             {
                 for (int i = 0; i < 2; i++)
@@ -125,83 +102,56 @@ namespace MySCADA
                 MessageBox.Show($"Lỗi tải ảnh (Tab 1): {ex.Message}\n" +
                    "Đảm bảo đã copy thư mục 'images' vào bin\\Debug");
             }
-
             if (Parent != null)
             {
                 btStart.Enabled = !Parent.Status;
                 btStop.Enabled = Parent.Status;
             }
-
             if (fanImages.Count > 0)
             {
                 pbfan.BackgroundImage = fanImages[0];
                 pbfan.BackgroundImageLayout = ImageLayout.Stretch;
             }
+
+
+            // --- KHỞI TẠO TAB 2  ---
+
+            // 1. Xóa cấu hình mặc định
+            chartSpeed.Series.Clear();
+            chartSpeed.ChartAreas.Clear();
+
+            // 2. Tạo vùng hiển thị (ChartArea)
+            ChartArea area = new ChartArea("MainArea");
+            area.AxisX.Title = "Thời gian (s)";
+            area.AxisY.Title = "Giá trị Tốc độ";
+            area.AxisY.Minimum = 0;
+            area.AxisY.Maximum = 1000;
+            chartSpeed.ChartAreas.Add(area);
+
+            // 3. Cấu hình trục X
+            chartSpeed.ChartAreas[0].AxisX.LabelStyle.Format = "HH:mm:ss";
+
+            // 4. Tạo Series (Đường kẻ)
+            Series series = new Series("TrendLine");
+            series.ChartType = SeriesChartType.Line;
+            series.BorderWidth = 2;
+            series.Color = System.Drawing.Color.Blue;
+
+            // 5. Gán ValueType cho SERIES
+            series.XValueType = ChartValueType.Time;
+            series.YValueType = ChartValueType.Double;
+
+            series.ChartArea = "MainArea";
+
+            // 6. Thêm Series vào Chart
+            chartSpeed.Series.Add(series);
+
+            // 7. Tắt chú thích (Legend)
+            chartSpeed.Legends[0].Enabled = false;
         }
 
         // -----------------------------------------------------------------
-        // HÀM SHOWN (Chỉ khởi tạo Tab 2)
-        // -----------------------------------------------------------------
-        private void Motor_Faceplate_Shown(object sender, EventArgs e)
-        {
-            // --- KHỞI TẠO TAB 2 (BIỂU ĐỒ) ---
-            try
-            {
-                // 7. ĐỊNH NGHĨA BỘ ÁNH XẠ (MAPPER)
-                // Báo cho LiveCharts biết: Trục X dùng 'Time', Trục Y dùng 'Speed'
-                var mapper = Mappers.Xy<TimeSpeedModel>()
-                    .X(model => model.Time.Ticks) // Ánh xạ X vào Thời gian (dưới dạng Ticks)
-                    .Y(model => model.Speed);     // Ánh xạ Y vào Tốc độ
-
-                // Lưu bộ ánh xạ này
-                Charting.For<TimeSpeedModel>(mapper);
-
-                // 8. Lấy biểu đồ thật
-                myChart = this.speedTrend.Child as CartesianChart;
-                if (myChart == null)
-                {
-                    throw new Exception("Không tìm thấy control 'CartesianChart' bên trong 'speedTrend'.");
-                }
-
-                // 9. Cấu hình Series
-                myChart.Series = new SeriesCollection
-                {
-                    new LineSeries
-                    {
-                        Title = "Speed",
-                        Values = SpeedValues, // Ràng buộc với danh sách
-                        PointGeometry = null
-                    }
-                };
-
-                // 10. Cấu hình Trục Y (Không đổi)
-                myChart.AxisY.Add(new Axis
-                {
-                    Title = "Speed",
-                    MinValue = 0,
-                    MaxValue = 1000
-                });
-
-                // 11. SỬA CẤU HÌNH TRỤC X (HIỂN THỊ THỜI GIAN)
-                myChart.AxisX.Add(new Axis
-                {
-                    Title = "Time",
-                    ShowLabels = true,
-                    // Định dạng nhãn: Lấy Ticks (value) chuyển về DateTime
-                    LabelFormatter = value => new DateTime((long)value).ToString("HH:mm:ss")
-                });
-
-                myChart.LegendLocation = LegendLocation.None;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Lỗi khởi tạo Biểu đồ (Tab 2): {ex.Message}\n" +
-                    "Tab 1 vẫn sẽ hoạt động.");
-            }
-        }
-
-        // -----------------------------------------------------------------
-        // CÁC HÀM ĐIỀU KHIỂN (Không thay đổi)
+        // CÁC HÀM ĐIỀU KHIỂN
         // -----------------------------------------------------------------
 
         private void btStart_Click(object sender, EventArgs e)
