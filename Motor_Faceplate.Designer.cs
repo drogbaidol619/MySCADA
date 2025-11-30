@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.UpdateTimer = new System.Windows.Forms.Timer(this.components);
             this.tab = new System.Windows.Forms.TabControl();
             this.controlPage = new System.Windows.Forms.TabPage();
@@ -48,6 +48,7 @@
             this.trendPage = new System.Windows.Forms.TabPage();
             this.chartSpeed = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.alarmPage = new System.Windows.Forms.TabPage();
+            this.dgvAlarm = new System.Windows.Forms.DataGridView();
             this.tab.SuspendLayout();
             this.controlPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.slider)).BeginInit();
@@ -56,6 +57,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbTem1)).BeginInit();
             this.trendPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartSpeed)).BeginInit();
+            this.alarmPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAlarm)).BeginInit();
             this.SuspendLayout();
             // 
             // UpdateTimer
@@ -207,22 +210,23 @@
             // 
             // chartSpeed
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chartSpeed.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chartSpeed.Legends.Add(legend3);
+            chartArea1.Name = "ChartArea1";
+            this.chartSpeed.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartSpeed.Legends.Add(legend1);
             this.chartSpeed.Location = new System.Drawing.Point(3, 3);
             this.chartSpeed.Name = "chartSpeed";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chartSpeed.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartSpeed.Series.Add(series1);
             this.chartSpeed.Size = new System.Drawing.Size(896, 446);
             this.chartSpeed.TabIndex = 0;
             this.chartSpeed.Text = "chart1";
             // 
             // alarmPage
             // 
+            this.alarmPage.Controls.Add(this.dgvAlarm);
             this.alarmPage.Location = new System.Drawing.Point(4, 25);
             this.alarmPage.Name = "alarmPage";
             this.alarmPage.Padding = new System.Windows.Forms.Padding(3);
@@ -230,6 +234,17 @@
             this.alarmPage.TabIndex = 2;
             this.alarmPage.Text = "AlarmPage";
             this.alarmPage.UseVisualStyleBackColor = true;
+            // 
+            // dgvAlarm
+            // 
+            this.dgvAlarm.AllowUserToAddRows = false;
+            this.dgvAlarm.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAlarm.Location = new System.Drawing.Point(0, 0);
+            this.dgvAlarm.Name = "dgvAlarm";
+            this.dgvAlarm.RowHeadersWidth = 51;
+            this.dgvAlarm.RowTemplate.Height = 24;
+            this.dgvAlarm.Size = new System.Drawing.Size(897, 444);
+            this.dgvAlarm.TabIndex = 0;
             // 
             // Motor_Faceplate
             // 
@@ -249,6 +264,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbTem1)).EndInit();
             this.trendPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chartSpeed)).EndInit();
+            this.alarmPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAlarm)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -270,5 +287,6 @@
         private System.Windows.Forms.Label lbTemperature;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartSpeed;
         private System.Windows.Forms.TabPage alarmPage;
+        private System.Windows.Forms.DataGridView dgvAlarm;
     }
 }

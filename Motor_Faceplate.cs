@@ -8,8 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
-// 1. THÊM THƯ VIỆN CHART (BẮT BUỘC)
 using System.Windows.Forms.DataVisualization.Charting;
 
 namespace MySCADA
@@ -21,7 +19,7 @@ namespace MySCADA
         private bool isSliderEdited = false;
         List<Image> fanImages = new List<Image>();
         int fan = 0;
-
+        private int lastAlarmCount = 0;
 
         public Motor_Faceplate(Motor parent)
         {
@@ -30,9 +28,9 @@ namespace MySCADA
             this.TopMost = true;
         }
 
-        // -----------------------------------------------------------------
-        // HÀM TIMER (Cập nhật cả Tab 1 và Tab 2)
-        // -----------------------------------------------------------------
+        // ---------------------
+        // HÀM TIMER 
+        // ---------------------
         private void UpdateTimer_Tick_1(object sender, EventArgs e)
         {
             if (Parent == null) return;
@@ -69,16 +67,43 @@ namespace MySCADA
                 DateTime currentTime = DateTime.Now;
                 double currentTimeValue = currentTime.ToOADate();
 
-                // thêm điểm mới
                 chartSpeed.Series["TrendLine"].Points.AddXY(currentTimeValue, Parent.Speed);
 
-                // Cập nhật trục X để tự động mở rộng (sẽ bị "nén" lại)
                 if (chartSpeed.Series["TrendLine"].Points.Count > 1)
                 {
                     chartSpeed.ChartAreas[0].AxisX.Maximum = currentTimeValue;
                 }
             }
-            catch (Exception ex) { /* Bỏ qua lỗi nhỏ nếu có */ }
+            catch (Exception ex) { }
+
+            // --- 3. CẬP NHẬT TAB 3  ---
+            if (Parent.Alarms.Count != lastAlarmCount)
+            {
+                UpdateAlarmGrid();
+                lastAlarmCount = Parent.Alarms.Count;
+            }
+        }
+
+        private void UpdateAlarmGrid()
+        {
+            dgvAlarm.Rows.Clear();
+            foreach (var alarm in Parent.Alarms)
+            {
+                int rowIndex = dgvAlarm.Rows.Add(alarm.AlarmText, alarm.AlarmType, alarm.AlarmTime);
+
+                DataGridViewRow row = dgvAlarm.Rows[rowIndex];
+
+                if (alarm.AlarmType == "High High")
+                {
+                    row.DefaultCellStyle.BackColor = Color.LightCoral;
+                    row.DefaultCellStyle.ForeColor = Color.Black;
+                }
+                else if (alarm.AlarmType == "Low Low")
+                {
+                    row.DefaultCellStyle.BackColor = Color.LightGoldenrodYellow;
+                    row.DefaultCellStyle.ForeColor = Color.Black;
+                }
+            }
         }
 
 
@@ -116,11 +141,11 @@ namespace MySCADA
 
             // --- KHỞI TẠO TAB 2  ---
 
-            // 1. Xóa cấu hình mặc định
+            // Xóa cấu hình mặc định
             chartSpeed.Series.Clear();
             chartSpeed.ChartAreas.Clear();
 
-            // 2. Tạo vùng hiển thị (ChartArea)
+            // Tạo vùng hiển thị (ChartArea)
             ChartArea area = new ChartArea("MainArea");
             area.AxisX.Title = "Thời gian (s)";
             area.AxisY.Title = "Giá trị Tốc độ";
@@ -128,26 +153,40 @@ namespace MySCADA
             area.AxisY.Maximum = 1000;
             chartSpeed.ChartAreas.Add(area);
 
-            // 3. Cấu hình trục X
             chartSpeed.ChartAreas[0].AxisX.LabelStyle.Format = "HH:mm:ss";
 
-            // 4. Tạo Series (Đường kẻ)
+            //  Tạo Series 
             Series series = new Series("TrendLine");
             series.ChartType = SeriesChartType.Line;
             series.BorderWidth = 2;
             series.Color = System.Drawing.Color.Blue;
 
-            // 5. Gán ValueType cho SERIES
+            // Gán ValueType cho SERIES
             series.XValueType = ChartValueType.Time;
             series.YValueType = ChartValueType.Double;
 
             series.ChartArea = "MainArea";
 
-            // 6. Thêm Series vào Chart
+            // Thêm Series vào Chart
             chartSpeed.Series.Add(series);
 
-            // 7. Tắt chú thích (Legend)
+            // Tắt chú thích (Legend)
             chartSpeed.Legends[0].Enabled = false;
+
+            // --- KHỞI TẠO TAB 3  ---
+            dgvAlarm.Rows.Clear();
+            dgvAlarm.RowHeadersVisible = true;
+            dgvAlarm.RowHeadersWidth = 50;
+
+            dgvAlarm.Columns.Add("AlarmText", "Nội dung Báo động");
+            dgvAlarm.Columns["AlarmText"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+            dgvAlarm.Columns.Add("AlarmType", "Loại");
+            dgvAlarm.Columns["AlarmType"].Width = 100;
+
+            dgvAlarm.Columns.Add("AlarmTime", "Thời gian");
+            dgvAlarm.Columns["AlarmTime"].Width = 150;
+            dgvAlarm.Columns["AlarmTime"].DefaultCellStyle.Format = "HH:mm:ss dd/MM/yyyy";
         }
 
         // -----------------------------------------------------------------
