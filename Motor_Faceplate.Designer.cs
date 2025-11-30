@@ -74,7 +74,7 @@
             this.tab.Location = new System.Drawing.Point(12, 22);
             this.tab.Name = "tab";
             this.tab.SelectedIndex = 0;
-            this.tab.Size = new System.Drawing.Size(910, 481);
+            this.tab.Size = new System.Drawing.Size(638, 374);
             this.tab.TabIndex = 21;
             // 
             // controlPage
@@ -92,14 +92,14 @@
             this.controlPage.Location = new System.Drawing.Point(4, 25);
             this.controlPage.Name = "controlPage";
             this.controlPage.Padding = new System.Windows.Forms.Padding(3);
-            this.controlPage.Size = new System.Drawing.Size(902, 452);
+            this.controlPage.Size = new System.Drawing.Size(630, 345);
             this.controlPage.TabIndex = 0;
             this.controlPage.Text = "Control Tab";
             this.controlPage.UseVisualStyleBackColor = true;
             // 
             // slider
             // 
-            this.slider.Location = new System.Drawing.Point(707, 40);
+            this.slider.Location = new System.Drawing.Point(546, 44);
             this.slider.Maximum = 1000;
             this.slider.Name = "slider";
             this.slider.Orientation = System.Windows.Forms.Orientation.Vertical;
@@ -112,7 +112,7 @@
             // pbfan
             // 
             this.pbfan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbfan.Location = new System.Drawing.Point(302, 40);
+            this.pbfan.Location = new System.Drawing.Point(199, 44);
             this.pbfan.Name = "pbfan";
             this.pbfan.Size = new System.Drawing.Size(137, 130);
             this.pbfan.TabIndex = 29;
@@ -120,7 +120,7 @@
             // 
             // btStop
             // 
-            this.btStop.Location = new System.Drawing.Point(78, 115);
+            this.btStop.Location = new System.Drawing.Point(38, 119);
             this.btStop.Margin = new System.Windows.Forms.Padding(4);
             this.btStop.Name = "btStop";
             this.btStop.Size = new System.Drawing.Size(124, 55);
@@ -131,7 +131,7 @@
             // 
             // btStart
             // 
-            this.btStart.Location = new System.Drawing.Point(78, 40);
+            this.btStart.Location = new System.Drawing.Point(38, 44);
             this.btStart.Margin = new System.Windows.Forms.Padding(4);
             this.btStart.Name = "btStart";
             this.btStart.Size = new System.Drawing.Size(124, 55);
@@ -144,7 +144,7 @@
             // 
             this.lbSpeed.AutoSize = true;
             this.lbSpeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSpeed.Location = new System.Drawing.Point(97, 297);
+            this.lbSpeed.Location = new System.Drawing.Point(57, 301);
             this.lbSpeed.Name = "lbSpeed";
             this.lbSpeed.Size = new System.Drawing.Size(70, 25);
             this.lbSpeed.TabIndex = 26;
@@ -154,7 +154,7 @@
             // 
             this.label.AutoSize = true;
             this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label.Location = new System.Drawing.Point(386, 297);
+            this.label.Location = new System.Drawing.Point(194, 289);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(53, 25);
             this.label.TabIndex = 25;
@@ -163,7 +163,7 @@
             // vbarSpeed
             // 
             this.vbarSpeed.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.vbarSpeed.Location = new System.Drawing.Point(555, 40);
+            this.vbarSpeed.Location = new System.Drawing.Point(394, 44);
             this.vbarSpeed.Name = "vbarSpeed";
             this.vbarSpeed.Size = new System.Drawing.Size(39, 269);
             this.vbarSpeed.TabIndex = 24;
@@ -172,7 +172,7 @@
             // pbTem1
             // 
             this.pbTem1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.pbTem1.Location = new System.Drawing.Point(555, 40);
+            this.pbTem1.Location = new System.Drawing.Point(394, 44);
             this.pbTem1.Name = "pbTem1";
             this.pbTem1.Size = new System.Drawing.Size(39, 270);
             this.pbTem1.TabIndex = 23;
@@ -180,7 +180,7 @@
             // 
             // lbSetSpeed
             // 
-            this.lbSetSpeed.Location = new System.Drawing.Point(278, 223);
+            this.lbSetSpeed.Location = new System.Drawing.Point(199, 227);
             this.lbSetSpeed.Name = "lbSetSpeed";
             this.lbSetSpeed.Size = new System.Drawing.Size(161, 22);
             this.lbSetSpeed.TabIndex = 22;
@@ -191,7 +191,7 @@
             // 
             this.lbTemperature.AutoSize = true;
             this.lbTemperature.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTemperature.Location = new System.Drawing.Point(97, 223);
+            this.lbTemperature.Location = new System.Drawing.Point(57, 227);
             this.lbTemperature.Name = "lbTemperature";
             this.lbTemperature.Size = new System.Drawing.Size(105, 25);
             this.lbTemperature.TabIndex = 21;
@@ -203,7 +203,7 @@
             this.trendPage.Location = new System.Drawing.Point(4, 25);
             this.trendPage.Name = "trendPage";
             this.trendPage.Padding = new System.Windows.Forms.Padding(3);
-            this.trendPage.Size = new System.Drawing.Size(902, 452);
+            this.trendPage.Size = new System.Drawing.Size(630, 345);
             this.trendPage.TabIndex = 1;
             this.trendPage.Text = "TrendPage";
             this.trendPage.UseVisualStyleBackColor = true;
@@ -230,7 +230,7 @@
             this.alarmPage.Location = new System.Drawing.Point(4, 25);
             this.alarmPage.Name = "alarmPage";
             this.alarmPage.Padding = new System.Windows.Forms.Padding(3);
-            this.alarmPage.Size = new System.Drawing.Size(902, 452);
+            this.alarmPage.Size = new System.Drawing.Size(630, 345);
             this.alarmPage.TabIndex = 2;
             this.alarmPage.Text = "AlarmPage";
             this.alarmPage.UseVisualStyleBackColor = true;
@@ -243,14 +243,14 @@
             this.dgvAlarm.Name = "dgvAlarm";
             this.dgvAlarm.RowHeadersWidth = 51;
             this.dgvAlarm.RowTemplate.Height = 24;
-            this.dgvAlarm.Size = new System.Drawing.Size(897, 444);
+            this.dgvAlarm.Size = new System.Drawing.Size(630, 342);
             this.dgvAlarm.TabIndex = 0;
             // 
             // Motor_Faceplate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(925, 503);
+            this.ClientSize = new System.Drawing.Size(662, 408);
             this.Controls.Add(this.tab);
             this.Name = "Motor_Faceplate";
             this.Text = "Motor_Faceplate";

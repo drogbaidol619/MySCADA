@@ -104,7 +104,7 @@
             // 
             // btMotor_3
             // 
-            this.btMotor_3.Location = new System.Drawing.Point(682, 95);
+            this.btMotor_3.Location = new System.Drawing.Point(29, 222);
             this.btMotor_3.Margin = new System.Windows.Forms.Padding(4);
             this.btMotor_3.Name = "btMotor_3";
             this.btMotor_3.Size = new System.Drawing.Size(124, 55);
@@ -126,7 +126,7 @@
             // pbMotor_3
             // 
             this.pbMotor_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbMotor_3.Location = new System.Drawing.Point(857, 95);
+            this.pbMotor_3.Location = new System.Drawing.Point(204, 222);
             this.pbMotor_3.Margin = new System.Windows.Forms.Padding(4);
             this.pbMotor_3.Name = "pbMotor_3";
             this.pbMotor_3.Size = new System.Drawing.Size(62, 55);
@@ -156,7 +156,7 @@
             // pbMotor_5
             // 
             this.pbMotor_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbMotor_5.Location = new System.Drawing.Point(204, 222);
+            this.pbMotor_5.Location = new System.Drawing.Point(857, 95);
             this.pbMotor_5.Margin = new System.Windows.Forms.Padding(4);
             this.pbMotor_5.Name = "pbMotor_5";
             this.pbMotor_5.Size = new System.Drawing.Size(62, 55);
@@ -176,7 +176,7 @@
             // 
             // btMotor_5
             // 
-            this.btMotor_5.Location = new System.Drawing.Point(29, 222);
+            this.btMotor_5.Location = new System.Drawing.Point(682, 95);
             this.btMotor_5.Margin = new System.Windows.Forms.Padding(4);
             this.btMotor_5.Name = "btMotor_5";
             this.btMotor_5.Size = new System.Drawing.Size(124, 55);
@@ -187,7 +187,7 @@
             // 
             // btMotor_4
             // 
-            this.btMotor_4.Location = new System.Drawing.Point(1002, 95);
+            this.btMotor_4.Location = new System.Drawing.Point(337, 222);
             this.btMotor_4.Margin = new System.Windows.Forms.Padding(4);
             this.btMotor_4.Name = "btMotor_4";
             this.btMotor_4.Size = new System.Drawing.Size(124, 55);
@@ -199,7 +199,7 @@
             // pbMotor_4
             // 
             this.pbMotor_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbMotor_4.Location = new System.Drawing.Point(1177, 95);
+            this.pbMotor_4.Location = new System.Drawing.Point(512, 222);
             this.pbMotor_4.Margin = new System.Windows.Forms.Padding(4);
             this.pbMotor_4.Name = "pbMotor_4";
             this.pbMotor_4.Size = new System.Drawing.Size(62, 55);
@@ -209,7 +209,7 @@
             // pbMotor_9
             // 
             this.pbMotor_9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbMotor_9.Location = new System.Drawing.Point(1177, 366);
+            this.pbMotor_9.Location = new System.Drawing.Point(512, 502);
             this.pbMotor_9.Margin = new System.Windows.Forms.Padding(4);
             this.pbMotor_9.Name = "pbMotor_9";
             this.pbMotor_9.Size = new System.Drawing.Size(62, 55);
@@ -219,7 +219,7 @@
             // pbMotor_8
             // 
             this.pbMotor_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbMotor_8.Location = new System.Drawing.Point(857, 366);
+            this.pbMotor_8.Location = new System.Drawing.Point(204, 502);
             this.pbMotor_8.Margin = new System.Windows.Forms.Padding(4);
             this.pbMotor_8.Name = "pbMotor_8";
             this.pbMotor_8.Size = new System.Drawing.Size(62, 55);
@@ -228,7 +228,7 @@
             // 
             // btMotor_9
             // 
-            this.btMotor_9.Location = new System.Drawing.Point(1002, 366);
+            this.btMotor_9.Location = new System.Drawing.Point(337, 502);
             this.btMotor_9.Margin = new System.Windows.Forms.Padding(4);
             this.btMotor_9.Name = "btMotor_9";
             this.btMotor_9.Size = new System.Drawing.Size(124, 55);
@@ -239,7 +239,7 @@
             // 
             // btMotor_8
             // 
-            this.btMotor_8.Location = new System.Drawing.Point(682, 366);
+            this.btMotor_8.Location = new System.Drawing.Point(29, 502);
             this.btMotor_8.Margin = new System.Windows.Forms.Padding(4);
             this.btMotor_8.Name = "btMotor_8";
             this.btMotor_8.Size = new System.Drawing.Size(124, 55);
@@ -272,7 +272,7 @@
             // pbMotor_10
             // 
             this.pbMotor_10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbMotor_10.Location = new System.Drawing.Point(204, 502);
+            this.pbMotor_10.Location = new System.Drawing.Point(857, 366);
             this.pbMotor_10.Margin = new System.Windows.Forms.Padding(4);
             this.pbMotor_10.Name = "pbMotor_10";
             this.pbMotor_10.Size = new System.Drawing.Size(62, 55);
@@ -281,7 +281,7 @@
             // 
             // btMotor_10
             // 
-            this.btMotor_10.Location = new System.Drawing.Point(29, 502);
+            this.btMotor_10.Location = new System.Drawing.Point(682, 366);
             this.btMotor_10.Margin = new System.Windows.Forms.Padding(4);
             this.btMotor_10.Name = "btMotor_10";
             this.btMotor_10.Size = new System.Drawing.Size(124, 55);
