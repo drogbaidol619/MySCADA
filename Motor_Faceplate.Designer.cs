@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.UpdateTimer = new System.Windows.Forms.Timer(this.components);
             this.tab = new System.Windows.Forms.TabControl();
             this.controlPage = new System.Windows.Forms.TabPage();
@@ -210,16 +210,16 @@
             // 
             // chartSpeed
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartSpeed.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartSpeed.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.chartSpeed.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartSpeed.Legends.Add(legend2);
             this.chartSpeed.Location = new System.Drawing.Point(3, 3);
             this.chartSpeed.Name = "chartSpeed";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartSpeed.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartSpeed.Series.Add(series2);
             this.chartSpeed.Size = new System.Drawing.Size(896, 446);
             this.chartSpeed.TabIndex = 0;
             this.chartSpeed.Text = "chart1";

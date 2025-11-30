@@ -52,6 +52,16 @@
             this.pbMotor_10 = new System.Windows.Forms.PictureBox();
             this.btMotor_10 = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.FlowMeter_1 = new System.Windows.Forms.Button();
+            this.FlowMeter_2 = new System.Windows.Forms.Button();
+            this.FlowMeter_3 = new System.Windows.Forms.Button();
+            this.FlowMeter_4 = new System.Windows.Forms.Button();
+            this.FlowMeter_5 = new System.Windows.Forms.Button();
+            this.FlowMeter_6 = new System.Windows.Forms.Button();
+            this.FlowMeter_7 = new System.Windows.Forms.Button();
+            this.FlowMeter_8 = new System.Windows.Forms.Button();
+            this.FlowMeter_9 = new System.Windows.Forms.Button();
+            this.FlowMeter_10 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbMotor_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMotor_2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMotor_3)).BeginInit();
@@ -73,7 +83,7 @@
             // pbMotor_1
             // 
             this.pbMotor_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbMotor_1.Location = new System.Drawing.Point(204, 95);
+            this.pbMotor_1.Location = new System.Drawing.Point(199, 79);
             this.pbMotor_1.Margin = new System.Windows.Forms.Padding(4);
             this.pbMotor_1.Name = "pbMotor_1";
             this.pbMotor_1.Size = new System.Drawing.Size(62, 55);
@@ -82,7 +92,7 @@
             // 
             // btMotor_1
             // 
-            this.btMotor_1.Location = new System.Drawing.Point(29, 95);
+            this.btMotor_1.Location = new System.Drawing.Point(24, 79);
             this.btMotor_1.Margin = new System.Windows.Forms.Padding(4);
             this.btMotor_1.Name = "btMotor_1";
             this.btMotor_1.Size = new System.Drawing.Size(124, 55);
@@ -93,7 +103,7 @@
             // 
             // btMotor_2
             // 
-            this.btMotor_2.Location = new System.Drawing.Point(337, 95);
+            this.btMotor_2.Location = new System.Drawing.Point(332, 79);
             this.btMotor_2.Margin = new System.Windows.Forms.Padding(4);
             this.btMotor_2.Name = "btMotor_2";
             this.btMotor_2.Size = new System.Drawing.Size(124, 55);
@@ -104,7 +114,7 @@
             // 
             // btMotor_3
             // 
-            this.btMotor_3.Location = new System.Drawing.Point(29, 222);
+            this.btMotor_3.Location = new System.Drawing.Point(24, 206);
             this.btMotor_3.Margin = new System.Windows.Forms.Padding(4);
             this.btMotor_3.Name = "btMotor_3";
             this.btMotor_3.Size = new System.Drawing.Size(124, 55);
@@ -116,7 +126,7 @@
             // pbMotor_2
             // 
             this.pbMotor_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbMotor_2.Location = new System.Drawing.Point(512, 95);
+            this.pbMotor_2.Location = new System.Drawing.Point(507, 79);
             this.pbMotor_2.Margin = new System.Windows.Forms.Padding(4);
             this.pbMotor_2.Name = "pbMotor_2";
             this.pbMotor_2.Size = new System.Drawing.Size(62, 55);
@@ -126,7 +136,7 @@
             // pbMotor_3
             // 
             this.pbMotor_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbMotor_3.Location = new System.Drawing.Point(204, 222);
+            this.pbMotor_3.Location = new System.Drawing.Point(199, 206);
             this.pbMotor_3.Margin = new System.Windows.Forms.Padding(4);
             this.pbMotor_3.Name = "pbMotor_3";
             this.pbMotor_3.Size = new System.Drawing.Size(62, 55);
@@ -146,7 +156,7 @@
             // pbMotor_6
             // 
             this.pbMotor_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbMotor_6.Location = new System.Drawing.Point(204, 366);
+            this.pbMotor_6.Location = new System.Drawing.Point(199, 350);
             this.pbMotor_6.Margin = new System.Windows.Forms.Padding(4);
             this.pbMotor_6.Name = "pbMotor_6";
             this.pbMotor_6.Size = new System.Drawing.Size(62, 55);
@@ -156,7 +166,7 @@
             // pbMotor_5
             // 
             this.pbMotor_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbMotor_5.Location = new System.Drawing.Point(857, 95);
+            this.pbMotor_5.Location = new System.Drawing.Point(815, 79);
             this.pbMotor_5.Margin = new System.Windows.Forms.Padding(4);
             this.pbMotor_5.Name = "pbMotor_5";
             this.pbMotor_5.Size = new System.Drawing.Size(62, 55);
@@ -165,7 +175,7 @@
             // 
             // btMotor_6
             // 
-            this.btMotor_6.Location = new System.Drawing.Point(29, 366);
+            this.btMotor_6.Location = new System.Drawing.Point(24, 350);
             this.btMotor_6.Margin = new System.Windows.Forms.Padding(4);
             this.btMotor_6.Name = "btMotor_6";
             this.btMotor_6.Size = new System.Drawing.Size(124, 55);
@@ -176,7 +186,7 @@
             // 
             // btMotor_5
             // 
-            this.btMotor_5.Location = new System.Drawing.Point(682, 95);
+            this.btMotor_5.Location = new System.Drawing.Point(640, 79);
             this.btMotor_5.Margin = new System.Windows.Forms.Padding(4);
             this.btMotor_5.Name = "btMotor_5";
             this.btMotor_5.Size = new System.Drawing.Size(124, 55);
@@ -187,7 +197,7 @@
             // 
             // btMotor_4
             // 
-            this.btMotor_4.Location = new System.Drawing.Point(337, 222);
+            this.btMotor_4.Location = new System.Drawing.Point(332, 206);
             this.btMotor_4.Margin = new System.Windows.Forms.Padding(4);
             this.btMotor_4.Name = "btMotor_4";
             this.btMotor_4.Size = new System.Drawing.Size(124, 55);
@@ -199,7 +209,7 @@
             // pbMotor_4
             // 
             this.pbMotor_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbMotor_4.Location = new System.Drawing.Point(512, 222);
+            this.pbMotor_4.Location = new System.Drawing.Point(507, 206);
             this.pbMotor_4.Margin = new System.Windows.Forms.Padding(4);
             this.pbMotor_4.Name = "pbMotor_4";
             this.pbMotor_4.Size = new System.Drawing.Size(62, 55);
@@ -209,7 +219,7 @@
             // pbMotor_9
             // 
             this.pbMotor_9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbMotor_9.Location = new System.Drawing.Point(512, 502);
+            this.pbMotor_9.Location = new System.Drawing.Point(507, 486);
             this.pbMotor_9.Margin = new System.Windows.Forms.Padding(4);
             this.pbMotor_9.Name = "pbMotor_9";
             this.pbMotor_9.Size = new System.Drawing.Size(62, 55);
@@ -219,7 +229,7 @@
             // pbMotor_8
             // 
             this.pbMotor_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbMotor_8.Location = new System.Drawing.Point(204, 502);
+            this.pbMotor_8.Location = new System.Drawing.Point(199, 486);
             this.pbMotor_8.Margin = new System.Windows.Forms.Padding(4);
             this.pbMotor_8.Name = "pbMotor_8";
             this.pbMotor_8.Size = new System.Drawing.Size(62, 55);
@@ -228,7 +238,7 @@
             // 
             // btMotor_9
             // 
-            this.btMotor_9.Location = new System.Drawing.Point(337, 502);
+            this.btMotor_9.Location = new System.Drawing.Point(332, 486);
             this.btMotor_9.Margin = new System.Windows.Forms.Padding(4);
             this.btMotor_9.Name = "btMotor_9";
             this.btMotor_9.Size = new System.Drawing.Size(124, 55);
@@ -239,7 +249,7 @@
             // 
             // btMotor_8
             // 
-            this.btMotor_8.Location = new System.Drawing.Point(29, 502);
+            this.btMotor_8.Location = new System.Drawing.Point(24, 486);
             this.btMotor_8.Margin = new System.Windows.Forms.Padding(4);
             this.btMotor_8.Name = "btMotor_8";
             this.btMotor_8.Size = new System.Drawing.Size(124, 55);
@@ -250,7 +260,7 @@
             // 
             // btMotor_7
             // 
-            this.btMotor_7.Location = new System.Drawing.Point(337, 366);
+            this.btMotor_7.Location = new System.Drawing.Point(332, 350);
             this.btMotor_7.Margin = new System.Windows.Forms.Padding(4);
             this.btMotor_7.Name = "btMotor_7";
             this.btMotor_7.Size = new System.Drawing.Size(124, 55);
@@ -262,7 +272,7 @@
             // pbMotor_7
             // 
             this.pbMotor_7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbMotor_7.Location = new System.Drawing.Point(512, 366);
+            this.pbMotor_7.Location = new System.Drawing.Point(507, 350);
             this.pbMotor_7.Margin = new System.Windows.Forms.Padding(4);
             this.pbMotor_7.Name = "pbMotor_7";
             this.pbMotor_7.Size = new System.Drawing.Size(62, 55);
@@ -272,7 +282,7 @@
             // pbMotor_10
             // 
             this.pbMotor_10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbMotor_10.Location = new System.Drawing.Point(857, 366);
+            this.pbMotor_10.Location = new System.Drawing.Point(815, 350);
             this.pbMotor_10.Margin = new System.Windows.Forms.Padding(4);
             this.pbMotor_10.Name = "pbMotor_10";
             this.pbMotor_10.Size = new System.Drawing.Size(62, 55);
@@ -281,7 +291,7 @@
             // 
             // btMotor_10
             // 
-            this.btMotor_10.Location = new System.Drawing.Point(682, 366);
+            this.btMotor_10.Location = new System.Drawing.Point(640, 350);
             this.btMotor_10.Margin = new System.Windows.Forms.Padding(4);
             this.btMotor_10.Name = "btMotor_10";
             this.btMotor_10.Size = new System.Drawing.Size(124, 55);
@@ -290,11 +300,131 @@
             this.btMotor_10.UseVisualStyleBackColor = true;
             this.btMotor_10.Click += new System.EventHandler(this.btMotor_10_Click);
             // 
+            // FlowMeter_1
+            // 
+            this.FlowMeter_1.Location = new System.Drawing.Point(914, 76);
+            this.FlowMeter_1.Margin = new System.Windows.Forms.Padding(4);
+            this.FlowMeter_1.Name = "FlowMeter_1";
+            this.FlowMeter_1.Size = new System.Drawing.Size(124, 55);
+            this.FlowMeter_1.TabIndex = 34;
+            this.FlowMeter_1.Text = "FlowMeter_1";
+            this.FlowMeter_1.UseVisualStyleBackColor = true;
+            this.FlowMeter_1.Click += new System.EventHandler(this.FlowMeter_1_Click);
+            // 
+            // FlowMeter_2
+            // 
+            this.FlowMeter_2.Location = new System.Drawing.Point(914, 162);
+            this.FlowMeter_2.Margin = new System.Windows.Forms.Padding(4);
+            this.FlowMeter_2.Name = "FlowMeter_2";
+            this.FlowMeter_2.Size = new System.Drawing.Size(124, 55);
+            this.FlowMeter_2.TabIndex = 35;
+            this.FlowMeter_2.Text = "FlowMeter_2";
+            this.FlowMeter_2.UseVisualStyleBackColor = true;
+            this.FlowMeter_2.Click += new System.EventHandler(this.FlowMeter_2_Click);
+            // 
+            // FlowMeter_3
+            // 
+            this.FlowMeter_3.Location = new System.Drawing.Point(914, 255);
+            this.FlowMeter_3.Margin = new System.Windows.Forms.Padding(4);
+            this.FlowMeter_3.Name = "FlowMeter_3";
+            this.FlowMeter_3.Size = new System.Drawing.Size(124, 55);
+            this.FlowMeter_3.TabIndex = 36;
+            this.FlowMeter_3.Text = "FlowMeter_3";
+            this.FlowMeter_3.UseVisualStyleBackColor = true;
+            this.FlowMeter_3.Click += new System.EventHandler(this.FlowMeter_3_Click);
+            // 
+            // FlowMeter_4
+            // 
+            this.FlowMeter_4.Location = new System.Drawing.Point(914, 350);
+            this.FlowMeter_4.Margin = new System.Windows.Forms.Padding(4);
+            this.FlowMeter_4.Name = "FlowMeter_4";
+            this.FlowMeter_4.Size = new System.Drawing.Size(124, 55);
+            this.FlowMeter_4.TabIndex = 37;
+            this.FlowMeter_4.Text = "FlowMeter_4";
+            this.FlowMeter_4.UseVisualStyleBackColor = true;
+            this.FlowMeter_4.Click += new System.EventHandler(this.FlowMeter_4_Click);
+            // 
+            // FlowMeter_5
+            // 
+            this.FlowMeter_5.Location = new System.Drawing.Point(914, 453);
+            this.FlowMeter_5.Margin = new System.Windows.Forms.Padding(4);
+            this.FlowMeter_5.Name = "FlowMeter_5";
+            this.FlowMeter_5.Size = new System.Drawing.Size(124, 55);
+            this.FlowMeter_5.TabIndex = 38;
+            this.FlowMeter_5.Text = "FlowMeter_5";
+            this.FlowMeter_5.UseVisualStyleBackColor = true;
+            this.FlowMeter_5.Click += new System.EventHandler(this.FlowMeter_5_Click);
+            // 
+            // FlowMeter_6
+            // 
+            this.FlowMeter_6.Location = new System.Drawing.Point(1087, 79);
+            this.FlowMeter_6.Margin = new System.Windows.Forms.Padding(4);
+            this.FlowMeter_6.Name = "FlowMeter_6";
+            this.FlowMeter_6.Size = new System.Drawing.Size(124, 55);
+            this.FlowMeter_6.TabIndex = 39;
+            this.FlowMeter_6.Text = "FlowMeter_6";
+            this.FlowMeter_6.UseVisualStyleBackColor = true;
+            this.FlowMeter_6.Click += new System.EventHandler(this.FlowMeter_6_Click);
+            // 
+            // FlowMeter_7
+            // 
+            this.FlowMeter_7.Location = new System.Drawing.Point(1087, 162);
+            this.FlowMeter_7.Margin = new System.Windows.Forms.Padding(4);
+            this.FlowMeter_7.Name = "FlowMeter_7";
+            this.FlowMeter_7.Size = new System.Drawing.Size(124, 55);
+            this.FlowMeter_7.TabIndex = 40;
+            this.FlowMeter_7.Text = "FlowMeter_7";
+            this.FlowMeter_7.UseVisualStyleBackColor = true;
+            this.FlowMeter_7.Click += new System.EventHandler(this.FlowMeter_7_Click);
+            // 
+            // FlowMeter_8
+            // 
+            this.FlowMeter_8.Location = new System.Drawing.Point(1087, 255);
+            this.FlowMeter_8.Margin = new System.Windows.Forms.Padding(4);
+            this.FlowMeter_8.Name = "FlowMeter_8";
+            this.FlowMeter_8.Size = new System.Drawing.Size(124, 55);
+            this.FlowMeter_8.TabIndex = 41;
+            this.FlowMeter_8.Text = "FlowMeter_8";
+            this.FlowMeter_8.UseVisualStyleBackColor = true;
+            this.FlowMeter_8.Click += new System.EventHandler(this.FlowMeter_8_Click);
+            // 
+            // FlowMeter_9
+            // 
+            this.FlowMeter_9.Location = new System.Drawing.Point(1087, 350);
+            this.FlowMeter_9.Margin = new System.Windows.Forms.Padding(4);
+            this.FlowMeter_9.Name = "FlowMeter_9";
+            this.FlowMeter_9.Size = new System.Drawing.Size(124, 55);
+            this.FlowMeter_9.TabIndex = 42;
+            this.FlowMeter_9.Text = "FlowMeter_9";
+            this.FlowMeter_9.UseVisualStyleBackColor = true;
+            this.FlowMeter_9.Click += new System.EventHandler(this.FlowMeter_9_Click);
+            // 
+            // FlowMeter_10
+            // 
+            this.FlowMeter_10.Location = new System.Drawing.Point(1087, 453);
+            this.FlowMeter_10.Margin = new System.Windows.Forms.Padding(4);
+            this.FlowMeter_10.Name = "FlowMeter_10";
+            this.FlowMeter_10.Size = new System.Drawing.Size(124, 55);
+            this.FlowMeter_10.TabIndex = 43;
+            this.FlowMeter_10.Text = "FlowMeter_10";
+            this.FlowMeter_10.UseVisualStyleBackColor = true;
+            this.FlowMeter_10.Click += new System.EventHandler(this.FlowMeter_10_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1294, 570);
+            this.Controls.Add(this.FlowMeter_10);
+            this.Controls.Add(this.FlowMeter_9);
+            this.Controls.Add(this.FlowMeter_8);
+            this.Controls.Add(this.FlowMeter_7);
+            this.Controls.Add(this.FlowMeter_6);
+            this.Controls.Add(this.FlowMeter_5);
+            this.Controls.Add(this.FlowMeter_4);
+            this.Controls.Add(this.FlowMeter_3);
+            this.Controls.Add(this.FlowMeter_2);
+            this.Controls.Add(this.FlowMeter_1);
             this.Controls.Add(this.pbMotor_10);
             this.Controls.Add(this.btMotor_10);
             this.Controls.Add(this.pbMotor_9);
@@ -358,6 +488,16 @@
         private System.Windows.Forms.PictureBox pbMotor_10;
         private System.Windows.Forms.Button btMotor_10;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Button FlowMeter_1;
+        private System.Windows.Forms.Button FlowMeter_2;
+        private System.Windows.Forms.Button FlowMeter_3;
+        private System.Windows.Forms.Button FlowMeter_4;
+        private System.Windows.Forms.Button FlowMeter_5;
+        private System.Windows.Forms.Button FlowMeter_6;
+        private System.Windows.Forms.Button FlowMeter_7;
+        private System.Windows.Forms.Button FlowMeter_8;
+        private System.Windows.Forms.Button FlowMeter_9;
+        private System.Windows.Forms.Button FlowMeter_10;
     }
 }
 

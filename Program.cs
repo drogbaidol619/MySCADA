@@ -10,6 +10,8 @@ namespace MySCADA
     {
         public static SCADA Root = new SCADA();
 
+        public static FlowMeterSystem FlowSys;
+
         ////public static PLC PLC_1;
         ////public static List<Motor> Motors = new List<Motor>();
         [STAThread]
@@ -30,6 +32,15 @@ namespace MySCADA
             {
                 Motor motor = new Motor($"Motor_{i + 5+  1}", i+5 , "PLC_2", 500);
                 Root.AddMotor(motor);
+            }
+
+            try
+            {
+                FlowSys = new FlowMeterSystem("192.168.0.10"); 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khởi tạo FlowMeterSystem: " + ex.Message);
             }
 
             Application.EnableVisualStyles();

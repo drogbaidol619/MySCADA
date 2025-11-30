@@ -21,8 +21,8 @@ namespace MySCADA
         private void btMotor_1_Click(object sender, EventArgs e)
         {
             Motor motor = Program.Root.FindMotor("Motor_1");
-            if (motor != null) 
-            { 
+            if (motor != null)
+            {
                 Motor_Faceplate fpl = new Motor_Faceplate(motor);
                 fpl.Show();
             }
@@ -150,11 +150,11 @@ namespace MySCADA
             {
                 if (motor.Status)
                 {
-                    control.BackColor = Color.Green; 
+                    control.BackColor = Color.Green;
                 }
                 else
                 {
-                    control.BackColor = Color.Gray; 
+                    control.BackColor = Color.Gray;
                 }
             }
             else
@@ -163,6 +163,97 @@ namespace MySCADA
             }
         }
 
+        //Flow Meter Faceplate
+        private void FlowMeter_1_Click(object sender, EventArgs e)
+        {
+            if (Program.FlowSys != null && Program.FlowSys.Meters.Count > 0)
+            {
+                FlowMeter meter = Program.FlowSys.Meters[0]; // Meter 1
+                FlowMeter_Faceplate popup = new FlowMeter_Faceplate(meter);
+                popup.Show();
+            }
+        }
 
-    }
+        private void FlowMeter_2_Click(object sender, EventArgs e)
+        {
+            if (Program.FlowSys != null && Program.FlowSys.Meters.Count > 0)
+            {
+                FlowMeter meter = Program.FlowSys.Meters[1]; // Meter 2
+                FlowMeter_Faceplate popup = new FlowMeter_Faceplate(meter);
+                popup.Show();
+            }
+        }
+        private void FlowMeter_3_Click(object sender, EventArgs e)
+        {
+            if (Program.FlowSys != null && Program.FlowSys.Meters.Count > 0)
+            {
+                FlowMeter meter = Program.FlowSys.Meters[2]; // Meter 3
+                FlowMeter_Faceplate popup = new FlowMeter_Faceplate(meter);
+                popup.Show();
+            }
+        }
+        private void FlowMeter_4_Click(object sender, EventArgs e)
+        {
+            if (Program.FlowSys != null && Program.FlowSys.Meters.Count > 0)
+            {
+                FlowMeter meter = Program.FlowSys.Meters[3]; // Meter 4
+                FlowMeter_Faceplate popup = new FlowMeter_Faceplate(meter);
+                popup.Show();
+            }
+        }
+        private void FlowMeter_5_Click(object sender, EventArgs e)
+        {
+            if (Program.FlowSys != null && Program.FlowSys.Meters.Count > 0)
+            {
+                FlowMeter meter = Program.FlowSys.Meters[4]; // Meter 5
+                FlowMeter_Faceplate popup = new FlowMeter_Faceplate(meter);
+                popup.Show();
+            }
+        }
+        private void FlowMeter_6_Click(object sender, EventArgs e)
+        {
+            if (Program.FlowSys != null && Program.FlowSys.Meters.Count > 0)
+            {
+                FlowMeter meter = Program.FlowSys.Meters[5]; // Meter 6
+                FlowMeter_Faceplate popup = new FlowMeter_Faceplate(meter);
+                popup.Show();
+            }
+        }
+        private void FlowMeter_7_Click(object sender, EventArgs e)
+        {
+            if (Program.FlowSys != null && Program.FlowSys.Meters.Count > 0)
+            {
+                FlowMeter meter = Program.FlowSys.Meters[6]; // Meter 7
+                FlowMeter_Faceplate popup = new FlowMeter_Faceplate(meter);
+                popup.Show();
+            }
+        }
+        private void FlowMeter_8_Click(object sender, EventArgs e)
+        {
+            if (Program.FlowSys != null && Program.FlowSys.Meters.Count > 0)
+            {
+                FlowMeter meter = Program.FlowSys.Meters[7]; // Meter 8
+                FlowMeter_Faceplate popup = new FlowMeter_Faceplate(meter);
+                popup.Show();
+            }
+        }
+        private void FlowMeter_9_Click(object sender, EventArgs e)
+        {
+            if (Program.FlowSys != null && Program.FlowSys.Meters.Count > 0)
+            {
+                FlowMeter meter = Program.FlowSys.Meters[8]; // Meter 9
+                FlowMeter_Faceplate popup = new FlowMeter_Faceplate(meter);
+                popup.Show();
+            }
+        }
+        private void FlowMeter_10_Click(object sender, EventArgs e)
+        {
+            if (Program.FlowSys != null && Program.FlowSys.Meters.Count > 0)
+            {
+                FlowMeter meter = Program.FlowSys.Meters[9]; // Meter 10
+                FlowMeter_Faceplate popup = new FlowMeter_Faceplate(meter);
+                popup.Show();
+            }
+        }
+    }   
 }
